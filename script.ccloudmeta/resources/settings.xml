@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+
+    <!-- General -->
+    <category label="30000">
+
+        <!-- Auto update players -->
+        <setting label="AutoInstall" id="auto_install" type="bool" default="true" visible="false"/>
+        <setting label="Initial Setup" option="close" type="action" action="RunPlugin(plugin://script.ccloudmeta/total/)"/>
+        
+        <!-- Simple selector -->
+        <setting label="30402" type="bool" id="use_simple_selector" default="false"/>
+        
+
+        <!-- Attempt to hide dialogs -->
+        <setting label="30410" type="bool" id="auto_hide_dialogs" default="false" enable="eq(-1,false)"/>
+        
+            <setting subsetting="true" label="30411" type="bool" id="auto_hide_dialogs_progress" default="true" enable="eq(-1,true)"/>
+
+            <setting subsetting="true" label="30412" type="bool" id="auto_hide_dialogs_info" default="true" enable="eq(-2,true)"/>
+            
+            <setting subsetting="true" label="30413" type="bool" id="auto_hide_dialogs_keyboard" default="true" enable="eq(-3,true)"/>
+            
+            
+        <!-- Simple selector -->
+        <setting label="30404" type="slider" id="pool_size" default="5" range="1,15" option="int" />
+        
+        <!-- Clear cache -->
+        <setting label="30401" type="action" action="RunPlugin(plugin://script.ccloudmeta/clear_cache)"/>        
+        
+        
+    </category>
+    
+</settings>

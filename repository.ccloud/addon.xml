@@ -1,0 +1,23 @@
+<addon id="repository.ccloud" name="cCloud Repo" version="1.0" provider-name="Bane">
+	<extension point="xbmc.addon.repository" name="cCloud Addon Repository">
+        <dir>
+					<info compressed="false">https://github.com/darknessally/tva-resolvers-repo/raw/master/addons.xml</info>
+	        <checksum>https://github.com/darknessally/tva-resolvers-repo/raw/master/addons.xml.md5</checksum>
+	        <datadir zip="true">https://github.com/darknessally/tva-resolvers-repo/raw/master/zips/</datadir>
+				</dir>
+        <info compressed="false">http://github.com/darknessally/firerises/raw/master/addons.xml</info>
+        <checksum>http://github.com/darknessally/firerises/raw/master/addons.xml.md5</checksum>
+        <datadir zip="true">http://github.com/darknessally/firerises/raw/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>cCloud</summary>
+		<description>Official cCloud Repo with addons for official support please go to ccloudtv.org</description>
+		<license>http://www.gnu.org/licenses/</license>
+    <forum>http://ccloudtv.org/forum</forum>
+    <website>http://ccloudtv.org</website>
+    <website>http://facebook.com/ccloudapp</website>
+    <website>http://twitter.com/ccloudapp</website>
+    <email></email>
+    <platform>all</platform>
+	</extension>
+</addon>

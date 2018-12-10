@@ -1,0 +1,30 @@
+{
+ "name"         : "cCloud TV Direct Play (Midraal)",
+ "plugin"       : "plugin.video.ccloudtv",
+ "priority"     : 900,
+ "id"           : "provider.midraal.ccloudtv.direct.play",
+ "filters"      : {},
+ "postprocess"  : "",
+ "movies"       : [],
+ "tvshows"      : [],
+ "live"         : [
+  [
+   {
+    "link"      : "plugin://plugin.video.ccloudtv/",
+    "steps"     : [
+     ".*All Channels.*",
+     ".*{basename}$$*({extension}|{extension|number_to_text()}).*"
+     ],
+    "action"    : "PLAY"
+   },
+   {
+    "link"      : "plugin://plugin.video.ccloudtv/",
+    "steps"     : [
+     ".*All Channels.*",
+     ".*{basename}$$*{extension|text_to_number()}.*"
+     ],
+    "action"    : "PLAY"
+   }   
+  ]  
+ ]
+}
