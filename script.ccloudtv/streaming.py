@@ -84,12 +84,14 @@ class StreamsService(object):
         @param channel:
         @type channel: source.Channel
         """
-        favourites = self.loadFavourites()
+
+        #commenting out 87-92 to speed up guide to avoid loop with meta.
+        #favourites = self.loadFavourites()
 
         # First check favourites, if we get exact match we use it
-        for label, stream in favourites:
-            if label == channel.title:
-                return stream
+        #for label, stream in favourites:
+        #    if label == channel.title:
+            #    return stream
 
 
         # Second check all addons and return all matches
@@ -106,7 +108,7 @@ class StreamsService(object):
                     stream = str(stream.replace("<channel>", channel.title.replace(" ","%20")))
                 if label == channel.title:
                     matches.append((id, label, stream))
-					
+
         if len(matches) == 1:
             return matches[0][2]
         else:
