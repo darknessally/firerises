@@ -6,7 +6,7 @@
 #      by Thomas Geppert [bluezed] - bluezed.apps@gmail.com
 #
 #      Modified for cCloud TV Guide (04/2016 onwards)
-#      by podgod - podgod@gmail.com
+#      by podgod and  Bane
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -36,16 +36,17 @@ addonname   = addon.getAddonInfo('name')
 
 if os.path.exists(GuideDB):
 	os.remove(GuideDB)
-	
+
 if not os.path.exists(cCloudMeta):
 	xbmc.executebuiltin('XBMC.RunPlugin(plugin://script.ccloudmeta/setup/)')
 
-	
+
 line1 = 'Welcome to the [B][COLOR yellow]cCloud TV Guide.[/COLOR][/B] This beta version is'
 line2 = 'a work in progress, so not all channels are working.'
-line3 = 'Check the announcements section for future update info'
+line3 = 'Please note on initial setup, The EPG has to create data files where it will not autosync on first time use only.'
 
- 
+
+
 xbmcgui.Dialog().ok(addonname, line1, line2, line3)
 
 try:

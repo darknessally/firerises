@@ -144,7 +144,7 @@ def main():
 def TVGuide():
 	if not os.path.exists(GuideDirectory):
 		dialog = xbmcgui.Dialog()
-		dialog.ok('addon_id', 'Please make sure you have cCloud TV Guide installed from the podgod repo')
+		dialog.ok('addon_id', 'Please make sure you have cCloud TV Guide installed from the cCloud Official Repo')
 		dialog.notification(addonname, 'Please install cCloud TV Guide', xbmcgui.NOTIFICATION_ERROR );
 
 	if os.path.exists(GuideDirectory):

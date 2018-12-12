@@ -6,7 +6,7 @@
 #      by Thomas Geppert [bluezed] - bluezed.apps@gmail.com
 #
 #      Modified for cCloud TV Guide (04/2016 onwards)
-#      by podgod - podgod@gmail.com
+#      by podgod and  Bane
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by

@@ -6,7 +6,7 @@
 #      by Thomas Geppert [bluezed] - bluezed.apps@gmail.com
 #
 #      Modified for cCloud TV Guide (04/2016 onwards)
-#      by podgod - podgod@gmail.com
+#      by podgod and  Bane
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -203,7 +203,7 @@ class TVGuide(xbmcgui.WindowXML):
                 self.close()
                 return
             self.database.initialize(self.onSourceInitialized, self.isSourceInitializationCancelled)
-            
+
         self.updateTimebar()
 
     def onAction(self, action):
@@ -429,10 +429,10 @@ class TVGuide(xbmcgui.WindowXML):
 
         elif buttonClicked == PopupMenu.C_POPUP_LIBTV:
             xbmc.executebuiltin('ActivateWindow(Videos,videodb://tvshows/titles/)')
-			
+
         elif buttonClicked == PopupMenu.C_POPUP_VIDEOADDONS:
             xbmc.executebuiltin('ActivateWindow(Videos,addons://sources/video/)')
-			
+
     def setFocusId(self, controlId):
         control = self.getControl(controlId)
         if control:
@@ -975,8 +975,8 @@ class PopupMenu(xbmcgui.WindowXMLDialog):
     C_POPUP_LIBMOV = 80000
     C_POPUP_LIBTV = 80001
     C_POPUP_VIDEOADDONS = 80002
-	
-	
+
+
     def __new__(cls, database, program, showRemind):
         return super(PopupMenu, cls).__new__(cls, 'script-tvguide-menu.xml', ADDON.getAddonInfo('path'), SKIN)
 
@@ -1069,7 +1069,7 @@ class ChannelsMenu(xbmcgui.WindowXMLDialog):
         self.database = database
         self.channelList = database.getChannelList(onlyVisible=False)
         self.swapInProgress = False
-        
+
         self.selectedChannel = 0
 
     def onInit(self):
@@ -1095,7 +1095,7 @@ class ChannelsMenu(xbmcgui.WindowXMLDialog):
             self.getControl(self.C_CHANNELS_SELECTION_VISIBLE).setVisible(True)
             xbmc.sleep(350)
             self.setFocusId(self.C_CHANNELS_LIST)
-            
+
         elif self.getFocusId() == self.C_CHANNELS_SELECTION and action.getId() in [ACTION_PREVIOUS_MENU, KEY_CONTEXT_MENU]:
             listControl = self.getControl(self.C_CHANNELS_LIST)
             idx = listControl.getSelectedPosition()

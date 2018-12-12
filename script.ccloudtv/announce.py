@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Copyright (C) 2016 PodGod
+Copyright (C) 2016 PodGod and Bane
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,20 +20,20 @@ along with this program. If not, see <http://www.gnu.org/licenses/>
 import urllib, urllib2, sys, re, os, random, unicodedata, cookielib, shutil
 import xbmc, xbmcgui, xbmcplugin, xbmcaddon, requests, base64
 
- 
+
 addon       = xbmcaddon.Addon()
 addonname   = addon.getAddonInfo('name')
- 
+
 line1 = "Hello World!"
 line2 = "We can write anything we want here"
 line3 = "Using Python"
- 
+
 xbmcgui.Dialog().ok(addonname, line1, line2, line3)
 
 def main():
 	addDir('[COLOR royalblue][B]***Latest Announcements***[/B][/COLOR]', yt, 3, '%s/announcements.png'% iconpath, fanart)
 
-def text_online():		
+def text_online():
 	text = '[COLOR royalblue][B]***Latest Announcements***[/B][/COLOR]'
 	newstext = 'http://pastebin.com/raw.php?i=7K3zDiZ2'
 	req = urllib2.Request(newstext)
@@ -67,7 +67,7 @@ def showText(heading, text):
 	except:
 	    pass
 
-		
+
 def addDir(name, url, mode, iconimage, fanart):
 	u = sys.argv[0] + "?url=" + urllib.quote_plus(url) + "&mode=" + str(mode) + "&name=" + urllib.quote_plus(name) + "&iconimage=" + urllib.quote_plus(iconimage)
 	ok = True
@@ -77,7 +77,7 @@ def addDir(name, url, mode, iconimage, fanart):
 	if ('youtube.com/user/' in url) or ('youtube.com/channel/' in url) or ('youtube/user/' in url) or ('youtube/channel/' in url):
 		u = 'plugin://plugin.video.youtube/%s/%s/' % (url.split( '/' )[-2], url.split( '/' )[-1])
 		ok = xbmcplugin.addDirectoryItem(handle = int(sys.argv[1]), url = u, listitem = liz, isFolder = True)
-		return ok		
+		return ok
 	ok = xbmcplugin.addDirectoryItem(handle = int(sys.argv[1]), url = u, listitem = liz, isFolder = True)
 	return ok
 
@@ -102,12 +102,12 @@ except:
 try:
 	iconimage = urllib.unquote_plus(params["iconimage"])
 except:
-	pass  
+	pass
 
 print "Mode: " + str(mode)
 print "URL: " + str(url)
 print "Name: " + str(name)
-print "iconimage: " + str(iconimage)		
-	
+print "iconimage: " + str(iconimage)
+
 if mode == 3:
 	text_online()
