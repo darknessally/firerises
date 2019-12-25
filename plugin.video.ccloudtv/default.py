@@ -55,6 +55,8 @@ yt = 'http://www.youtube.com'
 m3u = 'WVVoU01HTkViM1pNTTBKb1l6TlNiRmx0YkhWTWJVNTJZbE01ZVZsWVkzVmpSMmgzVURKck9WUlViRWxTYXpWNVZGUmpQUT09'.decode('base64')
 text = 'http://pastebin.com/raw.php?i=Zr0Hgrbw'
 GuideDirectory = xbmc.translatePath('special://home/addons/script.ccloudtv/')
+#TempTV = xbmc.translatePath('special://home/addons/plugin.video.temptv/')
+TempTV= 'plugin.video.temptv'
 GuideINI = xbmc.translatePath('special://home/userdata/addon_data/script.renegadestv/addons2.ini')
 xbmcplugin.setContent(int(sys.argv[1]), 'movies')
 skin = xbmc.getSkinDir()
@@ -122,6 +124,7 @@ def main():
         xbmc.executebuiltin("Container.Refresh")
     # addDir2('[COLOR white][B]TV Guide[/B][/COLOR]', 'guide', 97, '%s/guide.png'% iconpath, fanart)
     addDir('[COLOR white][B]cCloud TV Guide[/B][/COLOR] [COLOR red] NEW![/COLOR]', 'TVGuide', 95,'%s/guide.png'% iconpath, fanart)
+    addDir('[COLOR white][B]TempTV[/B][/COLOR] [COLOR red] NEW![/COLOR]', 'TempTV', 107,'%s/temptv.png'% iconpath, fanart)
 	#addDir('[COLOR yellow][B]cCloud TV Guide[/COLOR] [COLOR red]  NEW![/B][/COLOR]','TVGuide',95,'%s/guide.png'% iconpath,fanart)
     addDir('[COLOR white][B]English[/B][/COLOR]', 'english', 62, '%s/english.png'% iconpath, fanart)
     addDir('[COLOR white][B]Top 10[/B][/COLOR]', 'top10', 51, '%s/top10.png'% iconpath, fanart)
@@ -151,6 +154,18 @@ def TVGuide():
 		addonsini = urllib.URLopener()
     	xbmc.executebuiltin("RunAddon(script.ccloudtv)")
         sys.exit()
+
+def TtrempTV():
+	if not os.path.exists(TempTV):
+		dialog = xbmcgui.Dialog()
+		dialog.ok('addon_id', 'Please make sure you have cCloud TV Guide installed from the cCloud Official Repo')
+		dialog.notification(addonname, 'Please install cCloud TV Guide', xbmcgui.NOTIFICATION_ERROR );
+
+	if os.path.exists(TempTV):
+		addonsini = urllib.URLopener()
+        xbmc.executebuiltin("RunAddon(plugin.video.temptv)")
+        sys.exit()
+
 
 def removeAccents(s):
     return ''.join((c for c in unicodedata.normalize('NFD', s.decode('utf-8')) if unicodedata.category(c) != 'Mn'))
@@ -1313,6 +1328,9 @@ elif mode == 64:
 
 elif mode==95:
     TVGuide()
+
+elif mode==107:
+    TempTV()
 
 elif mode == 97:
 	guide()
