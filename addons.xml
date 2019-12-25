@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.video.ccloudtv"
-       name="cCloud TV"
-       version="1.5.8"
-       provider-name="Bane">
-  <requires>
-    <import addon="xbmc.python" version="2.19.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" />
-    <import addon="script.module.urlresolver"  version="3.0.0" optional="true"/>
-	<import addon="script.module.liveresolver"  version="0.1.28"/>
-	<import addon="script.module.addon.common" />
-	<import addon="script.module.simplejson" version="3.3.0"/>
-    <import addon="script.common.plugin.cache" version="2.5.5"/>
-    <import addon="script.tvaddons.debug.log" optional="true" />
-</requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video executable</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>All the best from cCloud Team Original Credits: Podgod and CA</summary>
-    <description>cCloud is an open source cloud based social IPTV service. It is built by the community for the community, where streaming is just a click away. Just click, play and stream. Yes, it's that simple. Just go to [COLOR blue]http://ccloudtv.org[/COLOR] and enjoy:) Please report any channels that are down here [COLOR blue]http://www.tiny.cc/reportchs[/COLOR] Users can now check servers status which can be found at [COLOR blue]http://ccloudtv.org/status[/COLOR]
-    </description>
-	<license>http://www.gnu.org/licenses/</license>
-    <forum>http://ccloudtv.org/forum</forum>
-    <website>http://ccloudtv.org</website>
-    <website>http://facebook.com/ccloudapp</website>
-    <website>http://twitter.com/ccloudapp</website>
-    <email></email>
-    <platform>all</platform>
-  </extension>
+<addon id="repository.temptv" name="Temptv Repo" version="0.0.5" provider-name="Tempest">
+	<extension point="xbmc.addon.repository" name="Tempest Repo">
+        <info compressed="false">https://raw.githubusercontent.com/Tempest0580/temptv/master/zips/addons.xml</info>
+	    <checksum>https://raw.githubusercontent.com/Tempest0580/temptv/master/zips/addons.xml.md5</checksum>
+	    <datadir zip="true">https://raw.githubusercontent.com/Tempest0580/temptv/master/zips/</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en">kodi addon</summary>
+		<description lang="en">Watch Live Tv</description>
+		<genre>live tv</genre>
+	</extension>
 </addon>
 
 <addon id="repository.ccloud" name="cCloud Repo" version="1.0" provider-name="Bane">
@@ -44,9 +20,9 @@
 	        <checksum>https://github.com/darknessally/tva-resolvers-repo/raw/master/addons.xml.md5</checksum>
 	        <datadir zip="true">https://github.com/darknessally/tva-resolvers-repo/raw/master/zips/</datadir>
 				</dir>
-        <info compressed="false">http://github.com/darknessally/firerises/raw/master/addons.xml</info>
-        <checksum>http://github.com/darknessally/firerises/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">http://github.com/darknessally/firerises/raw/master/zips</datadir>
+        <info compressed="false">http://github.com/darknessally/firerises/raw/herewego/addons.xml</info>
+        <checksum>http://github.com/darknessally/firerises/raw/herewego/addons.xml.md5</checksum>
+        <datadir zip="true">http://github.com/darknessally/firerises/raw/herewego/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>cCloud</summary>
@@ -101,6 +77,43 @@
       <content>tvshows</content>
       <content>episodes</content>
     </supportedcontent>
+  </extension>
+</addon>
+
+<addon id="plugin.video.ccloudtv"
+       name="cCloud TV"
+       version="1.5.8"
+       provider-name="Bane">
+  <requires>
+    <import addon="xbmc.python" version="2.19.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" />
+    <import addon="script.module.urlresolver"  version="3.0.0" optional="true"/>
+	<import addon="script.module.liveresolver"  version="0.1.28"/>
+	<import addon="script.module.addon.common" />
+	<import addon="script.module.simplejson" version="3.3.0"/>
+    <import addon="script.common.plugin.cache" version="2.5.5"/>
+    <import addon="script.tvaddons.debug.log" optional="true" />
+</requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>All the best from cCloud Team Original Credits: Podgod and CA</summary>
+    <description>cCloud is an open source cloud based social IPTV service. It is built by the community for the community, where streaming is just a click away. Just click, play and stream. Yes, it's that simple. Just go to [COLOR blue]http://ccloudtv.org[/COLOR] and enjoy:) Please report any channels that are down here [COLOR blue]http://www.tiny.cc/reportchs[/COLOR] Users can now check servers status which can be found at [COLOR blue]http://ccloudtv.org/status[/COLOR]
+    </description>
+	<license>http://www.gnu.org/licenses/</license>
+    <forum>http://ccloudtv.org/forum</forum>
+    <website>http://ccloudtv.org</website>
+    <website>http://facebook.com/ccloudapp</website>
+    <website>http://twitter.com/ccloudapp</website>
+    <email></email>
+    <platform>all</platform>
   </extension>
 </addon>
 

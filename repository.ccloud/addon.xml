@@ -5,9 +5,9 @@
 	        <checksum>https://github.com/darknessally/tva-resolvers-repo/raw/master/addons.xml.md5</checksum>
 	        <datadir zip="true">https://github.com/darknessally/tva-resolvers-repo/raw/master/zips/</datadir>
 				</dir>
-        <info compressed="false">http://github.com/darknessally/firerises/raw/master/addons.xml</info>
-        <checksum>http://github.com/darknessally/firerises/raw/master/addons.xml.md5</checksum>
-        <datadir zip="true">http://github.com/darknessally/firerises/raw/master/zips</datadir>
+        <info compressed="false">http://github.com/darknessally/firerises/raw/herewego/addons.xml</info>
+        <checksum>http://github.com/darknessally/firerises/raw/herewego/addons.xml.md5</checksum>
+        <datadir zip="true">http://github.com/darknessally/firerises/raw/herewego/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>cCloud</summary>
